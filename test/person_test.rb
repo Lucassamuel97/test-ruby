@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 require 'minitest/autorun'
 require_relative '../person/person'
 
