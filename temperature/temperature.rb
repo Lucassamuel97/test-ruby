@@ -9,48 +9,48 @@ class Temperature
 	def to_fahrenheit
 		case @unit
 		when "C"
-			puts (@value * 9) / 5 + 32
+			return ( (@value * 9) / 5 + 32 ).round(4)
 		when "K"
-			puts (((@value - 273.15) * 9) / 5) + 32
+			return ( ((@value - 273.15) * 9 / 5) + 32 ).round(4)
 		else
-			puts @value
+			return @value
 		end
 	end
 
 	def to_celsius
 		case @unit
 		when "F"
-			puts ((@value - 32) * 5) / 9
+			return ( (@value - 32) * 5 / 9 ).round(4)
 		when "K"
-			puts @value - 273.15
+			return ( @value - 273.15 ).round(4)
 		else
-			puts @value
+			return @value
 		end
 	end
 
 	def to_kelvin
 		case @unit
 		when "F"
-			puts (((@value - 32) * 5 ) / 9 ) + 273.15
+			return ( ((@value - 32) * 5  / 9 ) + 273.15 ).round(4)
 		when "C"
-			puts @value + 273.15
+			return ( @value + 273.15 ).round(4)
 		else
-			puts @value
+			return @value
 		end
 	end
 
 end
 
-temp = Temperature.new(10, 'F')
+temp = Temperature.new(10.0, 'F')
 puts "Unidade: #{temp.unit} Valor: #{temp.value}"
 
-temp.to_fahrenheit
-temp.to_kelvin
-temp.to_celsius
+puts temp.to_fahrenheit
+puts temp.to_kelvin
+puts temp.to_celsius
 
-temp.unit = 'C'
-temp.value = 5
-
-temp.to_fahrenheit
-temp.to_kelvin
-temp.to_celsius
+# puts temp.unit = 'C'
+# puts temp.value = 5
+ 
+# puts temp.to_fahrenheit
+# puts temp.to_kelvin
+# puts temp.to_celsius
