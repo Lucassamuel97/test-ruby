@@ -149,31 +149,111 @@ class MetricTest < Minitest::Test
     ######## CONVERSION ft
     
     def test_ft_conversion_to_m
-		assert_equal 0.508, Metric.new(20.0, 'in').to_m
+		assert_equal 30.4804, Metric.new(100.0, 'ft').to_m
     end
 
     def test_ft_conversion_to_cm
-		assert_equal 50.8, Metric.new(20.0, 'in').to_cm
+		assert_equal 3048.04, Metric.new(100.0, 'ft').to_cm
     end
     
     def test_ft_conversion_to_km
-		assert_equal 0.0005, Metric.new(20.0, 'in').to_km
+		assert_equal 0.0305, Metric.new(100.0, 'ft').to_km
     end
     
     def test_ft_conversion_to_in
-		assert_equal 20.0, Metric.new(20.0, 'in').to_in
+		assert_equal 1200.0133, Metric.new(100.0, 'ft').to_in
     end
 
     def test_ft_conversion_to_ft
-		assert_equal 1.6666, Metric.new(20.0, 'in').to_ft
+		assert_equal 100.0, Metric.new(100.0, 'ft').to_ft
     end
 
     def test_ft_conversion_to_yd
-		assert_equal 0.5555, Metric.new(20.0, 'in').to_yd
+		assert_equal 33.3334, Metric.new(100.0, 'ft').to_yd
     end
 
     def test_ft_conversion_to_mi
-		assert_equal 0.0003, Metric.new(20.0, 'in').to_mi
+		assert_equal 0.0189, Metric.new(100.0, 'ft').to_mi
+    end
+
+    
+    ######## CONVERSION yd
+
+    #metric = Metric.new(200.0, 'yd')
+    # Cm: : 18288.22
+    # m:  : 182.8822
+    # km: : 0.1829
+    # in: : 7200.0722
+    # ft: : 599.9999
+    # yd: : 200.0
+    # mi: : 0.1136
+    
+    def test_ft_conversion_to_m
+        assert_equal 30.4804, Metric.new(100.0, 'ft').to_m
+    end
+
+    def test_ft_conversion_to_cm
+        assert_equal 3048.04, Metric.new(100.0, 'ft').to_cm
+    end
+    
+    def test_ft_conversion_to_km
+        assert_equal 0.0305, Metric.new(100.0, 'ft').to_km
+    end
+    
+    def test_ft_conversion_to_in
+        assert_equal 1200.0133, Metric.new(100.0, 'ft').to_in
+    end
+
+    def test_ft_conversion_to_ft
+        assert_equal 100.0, Metric.new(100.0, 'ft').to_ft
+    end
+
+    def test_ft_conversion_to_yd
+        assert_equal 33.3334, Metric.new(100.0, 'ft').to_yd
+    end
+
+    def test_ft_conversion_to_mi
+        assert_equal 0.0189, Metric.new(100.0, 'ft').to_mi
+    end
+
+
+    # CONVERSION mi
+
+    #metric = Metric.new(100.0, 'mi')
+    # Cm: : 10000.0
+    # m:  : 100.0
+    # km: : 0.1
+    # in: : 3937.0
+    # ft: : 328.08
+    # yd: : 109.36
+    # mi: : 0.0621
+
+    def test_ft_conversion_to_m
+        assert_equal 30.4804, Metric.new(100.0, 'ft').to_m
+    end
+
+    def test_ft_conversion_to_cm
+        assert_equal 3048.04, Metric.new(100.0, 'ft').to_cm
+    end
+    
+    def test_ft_conversion_to_km
+        assert_equal 0.0305, Metric.new(100.0, 'ft').to_km
+    end
+    
+    def test_ft_conversion_to_in
+        assert_equal 1200.0133, Metric.new(100.0, 'ft').to_in
+    end
+
+    def test_ft_conversion_to_ft
+        assert_equal 100.0, Metric.new(100.0, 'ft').to_ft
+    end
+
+    def test_ft_conversion_to_yd
+        assert_equal 33.3334, Metric.new(100.0, 'ft').to_yd
+    end
+
+    def test_ft_conversion_to_mi
+        assert_equal 0.0189, Metric.new(100.0, 'ft').to_mi
     end
 
 end
