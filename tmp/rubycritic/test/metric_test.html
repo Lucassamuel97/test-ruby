@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ruby Critic - Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- StyleSheets -->
+    <link href="../assets/stylesheets/bootstrap.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../assets/stylesheets/font-awesome.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../assets/stylesheets/prettify.custom_theme.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../assets/stylesheets/application.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <header class="navbar navbar-default navbar-fixed-top">
+      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="../overview.html"><img src="../assets/images/logo.png" alt="Ruby Critic Logo" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
+      
+    </header>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <aside id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="../overview.html" class="project-nav-item overview-nav"><i class="fa fa-dashboard"></i>Overview</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../code_index.html" class="project-nav-item code-index-nav"><i class="fa fa-code"></i>Code</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../smells_index.html" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- /#sidebar-wrapper -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+  <!--Page Title -->
+  <div class="Page_Title">
+    <div class="file-time">
+      <span class="committed-at">
+        
+          Updated <time class='js-timeago' datetime='2019-09-01 15:37:39 -0300'>2019-09-01 15:37:39 -0300</time>
+        
+      </span>
+    </div>
+    <div>
+      <h3><small>test /</small> metric_test.rb</h3>
+    </div>
+  </div>
+  <!--End Page Title -->
+  <div class="Content_Wrapper">
+    <!-- code detail -->
+    <div class="code-top-detail clearfix row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="rating d big">
+              D
+            </div>
+          </div>
+          <div class="code-statistics col-md-11">
+            <div class="col-md-3">
+              <div><span class="metric">244</span><small> lines of codes</small></div>
+              <div><span class="metric">54</span><small> methods</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">3.9</span><small> complexity/method</small></div>
+              <div><span class="metric">4</span><small> churn</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">208.92</span><small> complexity</small></div>
+              <div><span class="metric">0</span><small> duplications</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="code-tabs">
+          <ul class="nav nav-pills right-to-left">
+            <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
+            <li class="active">
+              <a href="#" id="toggle-smells" class="toggle-button button">
+                4
+                smells
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <code class="prettyprint linenums lang-ruby file-code js-file-code">require &#39;simplecov&#39;
+SimpleCov.start &#39;rails&#39;
+
+require &#39;minitest/autorun&#39;
+require_relative &#39;../metric/metric&#39;
+
+class MetricTest &lt; Minitest::Test<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md" target="_blank"><b>IrresponsibleModule</b></a>        </span>      </div>      <span>MetricTest has no descriptive comment</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Methods.md" target="_blank"><b>TooManyMethods</b></a>        </span>      </div>      <span>MetricTest has at least 54 methods</span>          </div>  </li></ol>
+    def test_one_is_one
+        assert_equal 1, 1
+    end
+
+	def test_get_value_of_metric
+		assert_equal 10.0, Metric.new(10.0, &#39;m&#39;).value    	
+	end
+
+	def test_get_unit_of_metric
+		assert_equal &#39;m&#39;, Metric.new(18.0, &#39;m&#39;).unit    	
+	end
+
+	def test_set_value_of_metric
+		metric = Metric.new(10.0, &#39;m&#39;)
+		metric.value = 20.0<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>MetricTest#test_set_value_of_metric refers to 'metric' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="metric_test.html#L22" class="js-smell-location">0</a>                  <a href="metric_test.html#L23" class="js-smell-location">1</a>                  </div>  </li></ol>
+		assert_equal 20.0, metric.value<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>MetricTest#test_set_value_of_metric refers to 'metric' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="metric_test.html#L22" class="js-smell-location">0</a>                  <a href="metric_test.html#L23" class="js-smell-location">1</a>                  </div>  </li></ol>
+	end
+
+	def test_set_unit_of_metric
+		metric = Metric.new(10.0, &#39;m&#39;)
+		metric.unit = &#39;cm&#39;<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>MetricTest#test_set_unit_of_metric refers to 'metric' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="metric_test.html#L28" class="js-smell-location">0</a>                  <a href="metric_test.html#L29" class="js-smell-location">1</a>                  </div>  </li></ol>
+		assert_equal &#39;cm&#39;, metric.unit<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md" target="_blank"><b>FeatureEnvy</b></a>        </span>      </div>      <span>MetricTest#test_set_unit_of_metric refers to 'metric' more than self (maybe move it to another class?)</span>              <span>Locations:</span>                  <a href="metric_test.html#L28" class="js-smell-location">0</a>                  <a href="metric_test.html#L29" class="js-smell-location">1</a>                  </div>  </li></ol>
+    end
+
+    ######## CONVERSION M
+    
+    def test_m_conversion_to_m
+		assert_equal 1000.0, Metric.new(1000.0, &#39;m&#39;).to_m
+    end
+
+    def test_m_conversion_to_cm
+		assert_equal 100000.0, Metric.new(1000.0, &#39;m&#39;).to_cm
+    end
+    
+    def test_m_conversion_to_km
+		assert_equal 1.0, Metric.new(1000.0, &#39;m&#39;).to_km
+    end
+    
+    def test_m_conversion_to_in
+		assert_equal 39370.0, Metric.new(1000.0, &#39;m&#39;).to_in
+    end
+
+    def test_m_conversion_to_ft
+		assert_equal 3280.8, Metric.new(1000.0, &#39;m&#39;).to_ft
+    end
+
+    def test_m_conversion_to_yd
+		assert_equal 1093.6, Metric.new(1000.0, &#39;m&#39;).to_yd
+    end
+
+    def test_m_conversion_to_mi
+		assert_equal 0.6214, Metric.new(1000.0, &#39;m&#39;).to_mi
+    end
+
+    ######## CONVERSION cm
+    
+    def test_cm_conversion_to_m
+		assert_equal 100.0, Metric.new(10000.0, &#39;cm&#39;).to_m
+    end
+
+    def test_cm_conversion_to_cm
+		assert_equal 10000.0, Metric.new(10000.0, &#39;cm&#39;).to_cm
+    end
+    
+    def test_cm_conversion_to_km
+		assert_equal 0.1, Metric.new(10000.0, &#39;cm&#39;).to_km
+    end
+    
+    def test_cm_conversion_to_in
+		assert_equal 3937.0, Metric.new(10000.0, &#39;cm&#39;).to_in
+    end
+
+    def test_cm_conversion_to_ft
+		assert_equal 328.08, Metric.new(10000.0, &#39;cm&#39;).to_ft
+    end
+
+    def test_cm_conversion_to_yd
+		assert_equal 109.36, Metric.new(10000.0, &#39;cm&#39;).to_yd
+    end
+
+    def test_cm_conversion_to_mi
+		assert_equal 0.0621, Metric.new(10000.0, &#39;cm&#39;).to_mi
+    end
+
+    ######## CONVERSION KM
+    
+    def test_km_conversion_to_m
+		assert_equal 10000.0, Metric.new(10.0, &#39;km&#39;).to_m
+    end
+
+    def test_km_conversion_to_cm
+		assert_equal 1000000.0, Metric.new(10.0, &#39;km&#39;).to_cm
+    end
+    
+    def test_km_conversion_to_km
+		assert_equal 10.0, Metric.new(10.0, &#39;km&#39;).to_km
+    end
+    
+    def test_km_conversion_to_in
+		assert_equal 393700.0, Metric.new(10.0, &#39;km&#39;).to_in
+    end
+
+    def test_km_conversion_to_ft
+		assert_equal 32808.0, Metric.new(10.0, &#39;km&#39;).to_ft
+    end
+
+    def test_km_conversion_to_yd
+		assert_equal 10936.0, Metric.new(10.0, &#39;km&#39;).to_yd
+    end
+
+    def test_km_conversion_to_mi
+		assert_equal 6.2137, Metric.new(10.0, &#39;km&#39;).to_mi
+    end
+
+    ######## CONVERSION IN
+    
+    def test_in_conversion_to_m
+		assert_equal 0.508, Metric.new(20.0, &#39;in&#39;).to_m
+    end
+
+    def test_in_conversion_to_cm
+		assert_equal 50.8, Metric.new(20.0, &#39;in&#39;).to_cm
+    end
+    
+    def test_in_conversion_to_km
+		assert_equal 0.0005, Metric.new(20.0, &#39;in&#39;).to_km
+    end
+    
+    def test_in_conversion_to_in
+		assert_equal 20.0, Metric.new(20.0, &#39;in&#39;).to_in
+    end
+
+    def test_in_conversion_to_ft
+		assert_equal 1.6666, Metric.new(20.0, &#39;in&#39;).to_ft
+    end
+
+    def test_in_conversion_to_yd
+		assert_equal 0.5555, Metric.new(20.0, &#39;in&#39;).to_yd
+    end
+
+    def test_in_conversion_to_mi
+		assert_equal 0.0003, Metric.new(20.0, &#39;in&#39;).to_mi
+    end
+
+    ######## CONVERSION ft
+    
+    def test_ft_conversion_to_m
+		assert_equal 30.4804, Metric.new(100.0, &#39;ft&#39;).to_m
+    end
+    
+    def test_ft_conversion_to_cm
+		assert_equal 3048.04, Metric.new(100.0, &#39;ft&#39;).to_cm
+    end
+    
+    def test_ft_conversion_to_km
+		assert_equal 0.0305, Metric.new(100.0, &#39;ft&#39;).to_km
+    end
+    
+    def test_ft_conversion_to_in
+		assert_equal 1200.0133, Metric.new(100.0, &#39;ft&#39;).to_in
+    end
+
+    def test_ft_conversion_to_ft
+		assert_equal 100.0, Metric.new(100.0, &#39;ft&#39;).to_ft
+    end
+
+    def test_ft_conversion_to_yd
+		assert_equal 33.3334, Metric.new(100.0, &#39;ft&#39;).to_yd
+    end
+
+    def test_ft_conversion_to_mi
+		assert_equal 0.0189, Metric.new(100.0, &#39;ft&#39;).to_mi
+    end
+
+    
+    ######## CONVERSION yd
+    
+    def test_yd_conversion_to_m
+        assert_equal 182.8822, Metric.new(200.0, &#39;yd&#39;).to_m
+    end
+
+    def test_yd_conversion_to_cm
+        assert_equal 18288.22, Metric.new(200.0, &#39;yd&#39;).to_cm
+    end
+    
+    def test_yd_conversion_to_km
+        assert_equal 0.1829, Metric.new(200.0, &#39;yd&#39;).to_km
+    end
+    
+    def test_yd_conversion_to_in
+        assert_equal 7200.0722, Metric.new(200.0, &#39;yd&#39;).to_in
+    end
+
+    def test_yd_conversion_to_ft
+        assert_equal 599.9999, Metric.new(200.0, &#39;yd&#39;).to_ft
+    end
+
+    def test_yd_conversion_to_yd
+        assert_equal 200.0, Metric.new(200.0, &#39;yd&#39;).to_yd
+    end
+
+    def test_yd_conversion_to_mi
+        assert_equal 0.1136, Metric.new(200.0, &#39;yd&#39;).to_mi
+    end
+
+
+    # CONVERSION mi    
+    
+    def test_mi_conversion_to_m
+        assert_equal 160934.7088, Metric.new(100.0, &#39;mi&#39;).to_m
+    end
+
+    def test_mi_conversion_to_cm
+        assert_equal 16093470.88, Metric.new(100.0, &#39;mi&#39;).to_cm
+    end
+    
+    def test_mi_conversion_to_km
+        assert_equal 160.9347, Metric.new(100.0, &#39;mi&#39;).to_km
+    end
+    
+    def test_mi_conversion_to_in
+        assert_equal 6335999.4855, Metric.new(100.0, &#39;mi&#39;).to_in
+    end
+
+    def test_mi_conversion_to_ft
+        assert_equal 527994.5926, Metric.new(100.0, &#39;mi&#39;).to_ft
+    end
+
+    def test_mi_conversion_to_yd
+        assert_equal 175998.1975, Metric.new(100.0, &#39;mi&#39;).to_yd
+    end
+
+    def test_mi_conversion_to_mi
+        assert_equal 100.0, Metric.new(100.0, &#39;mi&#39;).to_mi
+    end
+
+end
+</code>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src='../assets/javascripts/jquery.min.js'></script>
+    <script src='../assets/javascripts/jquery.tablesorter.min.js'></script>
+    <script src='../assets/javascripts/jquery.scrollTo.min.js'></script>
+    <script src='../assets/javascripts/jquery.timeago.js'></script>
+    <script src='../assets/javascripts/highcharts.src-4.0.1.js'></script>
+    <script src='../assets/javascripts/prettify.js'></script>
+    <script src='../assets/javascripts/bootstrap.min.js'></script>
+    <script src='../assets/javascripts/application.js'></script>
+    <script src='../assets/javascripts/jquery.filtertable.min.js'></script>
+  </body>
+</html>
