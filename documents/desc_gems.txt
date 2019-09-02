@@ -1,0 +1,22 @@
+Lucas Samuel Pereira Godoy
+Breve descrição sobre algumas gems
+
+#Rubycritic
+RubyCritic é uma gema que envolve gemas de análise estática, como Reek , Flay e Flog, para fornecer um relatório de qualidade do seu código Ruby. O RubyCritic foi criado com o objetivo de se tornar uma alternativa gratuita ao Code Climate. Ele gera um relatório bem semelhante ao deste serviço, reportando os trechos mais complexos do seu código.
+
+https://github.com/whitesmith/rubycritic
+
+#RuboCop
+O foco do RuboCop é localizar más práticas de programação no seu código, com base no Ruby Style Guide. Todas as regras do RuboCop podem ser configuradas ou desabilitadas. Basta criar um arquivo .rubocop.yml na raiz do projeto com as configurações desejadas. Algumas das regras são: uso de aspas simples ou duplas para definir strings, tamanho máximo da linha, número de linhas em cada método e uso de espaços na definição de hashes. Ele também possui regras específicas para projetos usando Rails. 
+
+https://github.com/rubocop-hq/rubocop
+
+#Fukuzatsu
+O Fukuzatsu ("complexidade")  é uma ferramenta para medir a complexidade do código nos arquivos de classe Ruby. Sua análise gera pontuações com base em algoritmos de complexidade ciclomática, que em termos mais simples medem o número de caminhos de execução através de um determinado pedaço de código.
+
+https://github.com/CoralineAda/fukuzatsu
+
+#Fasterer
+Faça seus Rubies irem mais rápido com esta ferramenta de linha de comando altamente inspirada fast-ruby e  Sferik's talk at Baruco Conf.O Fasterer irá sugerir algumas melhorias na velocidade, que você pode verificar em detalhes no repositório.
+
+https://github.com/DamirSvrtan/fasterer
