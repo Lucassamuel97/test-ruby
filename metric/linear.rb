@@ -1,4 +1,4 @@
-class Metric
+class LinearMetric
 	attr_accessor :value, :unit
 
 	def initialize(value, unit)
@@ -6,7 +6,6 @@ class Metric
 		@unit = unit
 	end
 	
-
 	def to_m
 		case @unit
 		when "in"

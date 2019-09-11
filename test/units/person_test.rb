@@ -1,8 +1,5 @@
-require 'simplecov'
-SimpleCov.start 'rails'
-
-require 'minitest/autorun'
-require_relative '../person/person'
+require_relative '../test_helper'
+require_relative '../../person/person'
 
 class PersonTest < Minitest::Test
     def test_one_is_one

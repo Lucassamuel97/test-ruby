@@ -2,7 +2,7 @@ require 'simplecov'
 SimpleCov.start 'rails'
 
 require 'minitest/autorun'
-require_relative '../temperature/temperature'
+require_relative '../../temperature/temperature'
 
 class TemperatureTest < Minitest::Test
 	def test_one_is_one

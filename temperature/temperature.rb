@@ -40,17 +40,3 @@ class Temperature
 	end
 
 end
-
-temp = Temperature.new(10.0, 'F')
-puts "Unidade: #{temp.unit} Valor: #{temp.value}"
-
-puts temp.to_fahrenheit
-puts temp.to_kelvin
-puts temp.to_celsius
-
-# puts temp.unit = 'C'
-# puts temp.value = 5
- 
-# puts temp.to_fahrenheit
-# puts temp.to_kelvin
-# puts temp.to_celsius
